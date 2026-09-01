@@ -1,0 +1,30 @@
+<app-hero />
+
+<section class="section">
+  <div class="section-header">
+    <p class="eyebrow">Destacados</p>
+    <h2>Seleccion actual</h2>
+    <a routerLink="/stock">Ver todos</a>
+  </div>
+  <app-car-grid [cars]="featuredCars" />
+</section>
+
+<section class="trust section">
+  <article>
+    <span>01</span>
+    <h3>Stock filtrado</h3>
+    <p>Vehiculos visibles solo cuando estan disponibles o reservados, con informacion esencial clara.</p>
+  </article>
+  <article>
+    <span>02</span>
+    <h3>Trato directo</h3>
+    <p>Contacto telefonico visible para resolver dudas sin formularios, emails ni integraciones externas.</p>
+  </article>
+  <article>
+    <span>03</span>
+    <h3>Base preparada</h3>
+    <p>Estructura lista para conectar mas adelante con Directus como panel privado de contenidos.</p>
+  </article>
+</section>
+
+<app-contact-cta title="Hablemos del vehiculo que buscas" />

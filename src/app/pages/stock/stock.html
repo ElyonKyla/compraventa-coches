@@ -1,0 +1,16 @@
+<section class="page-header">
+  <p class="eyebrow">Vehiculos disponibles</p>
+  <h1>Stock actual</h1>
+  <p>Un escaparate breve y claro con unidades disponibles o reservadas. Los registros ocultos no se publican.</p>
+</section>
+
+<app-car-filters
+  [brands]="brands"
+  [fuels]="fuels"
+  [transmissions]="transmissions"
+  [(value)]="filters"
+/>
+
+<section class="results">
+  <app-car-grid [cars]="filteredCars()" />
+</section>

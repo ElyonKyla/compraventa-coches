@@ -1,0 +1,25 @@
+.car-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.empty {
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cfcfcf;
+  margin: 0;
+  padding: 2rem;
+}
+
+@media (max-width: 1040px) {
+  .car-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .car-grid {
+    grid-template-columns: 1fr;
+  }
+}

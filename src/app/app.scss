@@ -1,0 +1,6 @@
+.page-shell {
+  margin: 0 auto;
+  max-width: 1440px;
+  min-height: calc(100dvh - 11rem);
+  padding: clamp(1rem, 4vw, 4rem);
+}

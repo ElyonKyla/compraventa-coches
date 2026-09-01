@@ -1,0 +1,13 @@
+<section class="gallery" aria-label="Galeria del vehiculo">
+  <img class="main-image" [src]="images()[selectedIndex()]" [alt]="title()" />
+
+  @if (images().length > 1) {
+    <div class="thumbs">
+      @for (image of images(); track image; let index = $index) {
+        <button type="button" [class.active]="index === selectedIndex()" (click)="selectedIndex.set(index)">
+          <img [src]="image" [alt]="title() + ' imagen ' + (index + 1)" />
+        </button>
+      }
+    </div>
+  }
+</section>

@@ -1,0 +1,28 @@
+.page-header {
+  margin-bottom: 1.5rem;
+  max-width: 48rem;
+}
+
+.eyebrow {
+  color: #d4af39;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.7rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0;
+}
+
+p:last-child {
+  color: #cfcfcf;
+  line-height: 1.7;
+}
+
+.results {
+  margin-top: 1.5rem;
+}

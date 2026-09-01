@@ -1,0 +1,36 @@
+.gallery {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.main-image {
+  aspect-ratio: 16 / 10;
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+  width: 100%;
+}
+
+.thumbs {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+button {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  padding: 0;
+}
+
+button.active {
+  border-color: #d4af39;
+}
+
+button img {
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}

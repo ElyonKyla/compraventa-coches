@@ -1,0 +1,18 @@
+<article class="car-card">
+  <a [routerLink]="['/coches', car().slug]" class="image-link">
+    <img [src]="car().images[0]" [alt]="car().title" loading="lazy" />
+    @if (car().status === 'reserved') {
+      <span class="badge">Reservado</span>
+    }
+  </a>
+  <div class="content">
+    <p class="meta">{{ car().brand }} · {{ car().year }}</p>
+    <h3><a [routerLink]="['/coches', car().slug]">{{ car().title }}</a></h3>
+    <p class="price">{{ car().price | number: '1.0-0' }} €</p>
+    <dl>
+      <div><dt>Km</dt><dd>{{ car().mileage | number: '1.0-0' }}</dd></div>
+      <div><dt>Combustible</dt><dd>{{ car().fuel }}</dd></div>
+      <div><dt>Cambio</dt><dd>{{ car().transmission }}</dd></div>
+    </dl>
+  </div>
+</article>

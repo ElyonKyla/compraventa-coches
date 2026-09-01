@@ -1,0 +1,9 @@
+@if (cars().length) {
+  <div class="car-grid">
+    @for (car of cars(); track car.id) {
+      <app-car-card [car]="car" />
+    }
+  </div>
+} @else {
+  <p class="empty">No hay vehiculos que coincidan con los filtros seleccionados.</p>
+}

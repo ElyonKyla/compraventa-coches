@@ -1,0 +1,47 @@
+@if (car(); as car) {
+  <section class="detail-header">
+    <a routerLink="/stock">Volver al stock</a>
+    <p class="eyebrow">{{ car.brand }} {{ car.model }}</p>
+    <h1>{{ car.title }}</h1>
+    @if (car.version) {
+      <p class="version">{{ car.version }}</p>
+    }
+  </section>
+
+  <section class="detail-layout">
+    <app-car-gallery [images]="car.images" [title]="car.title" />
+    <aside>
+      @if (car.status === 'reserved') {
+        <p class="badge">Reservado</p>
+      }
+      <p class="price">{{ car.price | number: '1.0-0' }} €</p>
+      <app-car-specs [car]="car" />
+      <a class="call" href="tel:+34900111222">Llamar sobre este coche</a>
+    </aside>
+  </section>
+
+  <section class="content-block">
+    <h2>Descripcion</h2>
+    <p>{{ car.description }}</p>
+  </section>
+
+  @if (car.equipment?.length) {
+    <section class="content-block">
+      <h2>Equipamiento</h2>
+      <ul>
+        @for (item of car.equipment; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  <app-contact-cta title="Consulta disponibilidad de este vehiculo" />
+} @else {
+  <section class="not-found">
+    <p class="eyebrow">No encontrado</p>
+    <h1>Este vehiculo no esta disponible</h1>
+    <p>Puede que ya no forme parte del escaparate publico o que la direccion no sea correcta.</p>
+    <a routerLink="/stock">Volver al stock</a>
+  </section>
+}

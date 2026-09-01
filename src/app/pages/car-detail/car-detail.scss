@@ -1,0 +1,102 @@
+.detail-header {
+  margin-bottom: 1.5rem;
+}
+
+.detail-header a,
+.not-found a {
+  color: #d4af39;
+  text-decoration: none;
+}
+
+.eyebrow {
+  color: #d4af39;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  margin: 1rem 0 0.7rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.version {
+  color: #cfcfcf;
+  font-size: 1.1rem;
+}
+
+.detail-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.5fr) minmax(20rem, 0.8fr);
+}
+
+aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.badge {
+  background: #d4af39;
+  color: #111;
+  display: inline-block;
+  font-weight: 700;
+  justify-self: start;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+}
+
+.price {
+  color: #d4af39;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.call {
+  background: #d4af39;
+  color: #111;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.content-block,
+.not-found {
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 1.5rem 0;
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+h2 {
+  color: #fff;
+  margin: 0 0 0.8rem;
+}
+
+.content-block p,
+.not-found p {
+  color: #cfcfcf;
+  line-height: 1.8;
+  margin: 0;
+}
+
+ul {
+  color: #cfcfcf;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 980px) {
+  .detail-layout,
+  ul {
+    grid-template-columns: 1fr;
+  }
+}

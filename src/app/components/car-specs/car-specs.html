@@ -1,0 +1,13 @@
+<dl class="specs">
+  <div><dt>Año</dt><dd>{{ car().year }}</dd></div>
+  <div><dt>Kilometros</dt><dd>{{ car().mileage | number: '1.0-0' }} km</dd></div>
+  <div><dt>Precio</dt><dd>{{ car().price | number: '1.0-0' }} €</dd></div>
+  <div><dt>Combustible</dt><dd>{{ car().fuel }}</dd></div>
+  <div><dt>Cambio</dt><dd>{{ car().transmission }}</dd></div>
+  @if (car().power) {
+    <div><dt>Potencia</dt><dd>{{ car().power }}</dd></div>
+  }
+  @if (car().engine) {
+    <div><dt>Motor</dt><dd>{{ car().engine }}</dd></div>
+  }
+</dl>

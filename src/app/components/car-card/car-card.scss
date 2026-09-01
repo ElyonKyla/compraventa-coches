@@ -1,0 +1,79 @@
+.car-card {
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.image-link {
+  aspect-ratio: 16 / 10;
+  display: block;
+  position: relative;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  width: 100%;
+}
+
+.car-card:hover img {
+  transform: scale(1.04);
+}
+
+.badge {
+  background: #d4af39;
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 0.7rem;
+  position: absolute;
+  right: 1rem;
+  text-transform: uppercase;
+  top: 1rem;
+}
+
+.content {
+  padding: 1.15rem;
+}
+
+.meta {
+  color: #9d9d9d;
+  font-size: 0.85rem;
+  margin: 0 0 0.35rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.price {
+  color: #d4af39;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0.75rem 0;
+}
+
+dl {
+  color: #cfcfcf;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+dt {
+  color: #777;
+  font-size: 0.72rem;
+}
+
+dd {
+  margin: 0.2rem 0 0;
+}

@@ -1,0 +1,45 @@
+<section class="filters" aria-label="Filtros de vehiculos">
+  <label>
+    Marca
+    <select [ngModel]="value().brand" (ngModelChange)="updateFilter('brand', $event)">
+      <option value="">Todas</option>
+      @for (brand of brands(); track brand) {
+        <option [value]="brand">{{ brand }}</option>
+      }
+    </select>
+  </label>
+
+  <label>
+    Combustible
+    <select [ngModel]="value().fuel" (ngModelChange)="updateFilter('fuel', $event)">
+      <option value="">Todos</option>
+      @for (fuel of fuels(); track fuel) {
+        <option [value]="fuel">{{ fuel }}</option>
+      }
+    </select>
+  </label>
+
+  <label>
+    Cambio
+    <select [ngModel]="value().transmission" (ngModelChange)="updateFilter('transmission', $event)">
+      <option value="">Todos</option>
+      @for (transmission of transmissions(); track transmission) {
+        <option [value]="transmission">{{ transmission }}</option>
+      }
+    </select>
+  </label>
+
+  <label>
+    Precio maximo
+    <select [ngModel]="value().maxPrice" (ngModelChange)="updateFilter('maxPrice', $event)">
+      <option [ngValue]="null">Sin limite</option>
+      <option [ngValue]="40000">Hasta 40.000 €</option>
+      <option [ngValue]="50000">Hasta 50.000 €</option>
+      <option [ngValue]="70000">Hasta 70.000 €</option>
+    </select>
+  </label>
+
+  @if (hasActiveFilters()) {
+    <button type="button" (click)="reset()">Limpiar filtros</button>
+  }
+</section>
