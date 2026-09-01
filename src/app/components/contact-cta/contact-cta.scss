@@ -1,14 +1,20 @@
 .contact-cta {
-  align-items: center;
+  align-items: start;
   background:
     radial-gradient(circle at top right, rgba(212, 175, 57, 0.2), transparent 18rem),
     linear-gradient(135deg, rgba(23, 22, 18, 0.98), rgba(15, 15, 17, 0.96));
   border: 1px solid rgba(212, 175, 57, 0.3);
   box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.22);
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(1.25rem, 4vw, 3rem);
   justify-content: space-between;
-  padding: clamp(1.25rem, 4vw, 2.5rem);
+  margin-top: clamp(2.25rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.contact-cta > div:first-child {
+  max-width: 46rem;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -21,9 +27,11 @@
 
 h2 {
   color: #fff;
-  font-size: clamp(1.7rem, 4vw, 3rem);
-  line-height: 1.05;
+  font-size: clamp(1.7rem, 3.4vw, 2.65rem);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 p:last-child {
@@ -35,7 +43,8 @@ p:last-child {
 .phones {
   display: grid;
   gap: 0.75rem;
-  min-width: 12rem;
+  min-width: 13rem;
+  padding-top: 1.75rem;
 }
 
 a {
@@ -61,5 +70,6 @@ a:first-child {
 
   .phones {
     min-width: 0;
+    padding-top: 0;
   }
 }

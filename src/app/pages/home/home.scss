@@ -1,5 +1,5 @@
 .section {
-  margin-top: clamp(2rem, 6vw, 4rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
 }
 
 .section-header {
@@ -7,7 +7,7 @@
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.35rem;
 }
 
 .eyebrow {
@@ -20,7 +20,8 @@
 
 h2 {
   color: #fff;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  letter-spacing: -0.04em;
   margin: 0;
 }
 
@@ -38,7 +39,7 @@ h2 {
 article {
   background: linear-gradient(180deg, rgba(24, 24, 27, 0.95), rgba(17, 17, 19, 0.95));
   border: 1px solid rgba(255, 255, 255, 0.09);
-  padding: 1.5rem;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 span {

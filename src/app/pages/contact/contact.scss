@@ -12,10 +12,11 @@
 
 h1 {
   color: #fff;
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
-  line-height: 1;
+  font-size: clamp(2.2rem, 4.6vw, 4.1rem);
+  letter-spacing: -0.055em;
+  line-height: 1.03;
   margin: 0;
-  max-width: 13ch;
+  max-width: 14ch;
 }
 
 .lead {

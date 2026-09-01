@@ -18,8 +18,9 @@
 
 h1 {
   color: #fff;
-  font-size: clamp(2.2rem, 5vw, 4.8rem);
-  line-height: 1;
+  font-size: clamp(2.2rem, 4.7vw, 4.35rem);
+  letter-spacing: -0.055em;
+  line-height: 1.02;
   margin: 0;
 }
 
@@ -31,7 +32,7 @@ h1 {
 .detail-layout {
   display: grid;
   gap: clamp(1.25rem, 3vw, 2rem);
-  grid-template-columns: minmax(0, 1.5fr) minmax(20rem, 0.8fr);
+  grid-template-columns: minmax(0, 1.48fr) minmax(19rem, 0.74fr);
 }
 
 aside {

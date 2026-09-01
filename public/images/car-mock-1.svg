@@ -1,13 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="SUV premium oscuro">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="SUV premium negro en estudio">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24211b"/><stop offset="0.55" stop-color="#0f1013"/><stop offset="1" stop-color="#050506"/></linearGradient>
-    <linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#b98c24"/><stop offset="1" stop-color="#f0d26a"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a251d"/><stop offset="0.45" stop-color="#111216"/><stop offset="1" stop-color="#050506"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151516"/><stop offset="1" stop-color="#060607"/></linearGradient>
+    <linearGradient id="paint" x1="0" x2="1"><stop offset="0" stop-color="#111318"/><stop offset="0.48" stop-color="#30323a"/><stop offset="1" stop-color="#0b0c10"/></linearGradient>
+    <linearGradient id="glass" x1="0" x2="1"><stop offset="0" stop-color="#05070a"/><stop offset="1" stop-color="#23314a"/></linearGradient>
+    <radialGradient id="lamp" cx="68%" cy="18%" r="45%"><stop offset="0" stop-color="#f2cf67" stop-opacity="0.45"/><stop offset="1" stop-color="#d4af39" stop-opacity="0"/></radialGradient>
   </defs>
-  <rect width="1600" height="1000" fill="url(#bg)"/>
-  <circle cx="1240" cy="210" r="250" fill="#d4af39" opacity="0.14"/>
-  <path d="M190 672c38-136 149-215 323-235l234-28c132-16 276 26 361 105l138 128 155 31c42 8 73 45 73 88v47H133v-53c0-40 22-72 57-83z" fill="#1b1c20" stroke="#4e4630" stroke-width="8"/>
-  <path d="M501 454h224c119 0 215 30 288 91l86 72H346c31-83 78-137 155-163z" fill="#0b0c0f" stroke="#d4af39" stroke-opacity="0.32" stroke-width="6"/>
-  <circle cx="415" cy="809" r="103" fill="#070708" stroke="#d4af39" stroke-width="12"/><circle cx="415" cy="809" r="44" fill="#2b2c31"/>
-  <circle cx="1164" cy="809" r="103" fill="#070708" stroke="#d4af39" stroke-width="12"/><circle cx="1164" cy="809" r="44" fill="#2b2c31"/>
-  <rect x="938" y="632" width="208" height="14" rx="7" fill="url(#gold)"/>
+  <rect width="1600" height="1000" fill="url(#wall)"/>
+  <rect y="690" width="1600" height="310" fill="url(#floor)"/>
+  <ellipse cx="1090" cy="180" rx="520" ry="330" fill="url(#lamp)"/>
+  <path d="M165 715c58-150 181-237 371-262l232-31c159-21 305 25 438 137l150 126 95 18c45 9 78 48 78 94v37H104v-45c0-34 21-62 61-74z" fill="url(#paint)" stroke="#5f5540" stroke-width="8"/>
+  <path d="M459 489h285c155 0 281 43 378 130l61 55H318c32-88 79-149 141-185z" fill="url(#glass)" stroke="#d4af39" stroke-opacity="0.25" stroke-width="6"/>
+  <path d="M259 682h863" stroke="#f0d06a" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+  <rect x="1198" y="681" width="136" height="16" rx="8" fill="#e9c85c" opacity="0.85"/>
+  <circle cx="424" cy="820" r="104" fill="#050506" stroke="#101115" stroke-width="24"/><circle cx="424" cy="820" r="70" fill="none" stroke="#d8d8d3" stroke-width="10" opacity="0.9"/><circle cx="424" cy="820" r="34" fill="#2a2d33"/>
+  <circle cx="1186" cy="820" r="104" fill="#050506" stroke="#101115" stroke-width="24"/><circle cx="1186" cy="820" r="70" fill="none" stroke="#d8d8d3" stroke-width="10" opacity="0.9"/><circle cx="1186" cy="820" r="34" fill="#2a2d33"/>
+  <ellipse cx="800" cy="925" rx="590" ry="38" fill="#000" opacity="0.42"/>
 </svg>

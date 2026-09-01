@@ -1,6 +1,6 @@
 .car-grid {
   display: grid;
-  gap: clamp(1rem, 2vw, 1.5rem);
+  gap: clamp(1rem, 2.2vw, 1.65rem);
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 

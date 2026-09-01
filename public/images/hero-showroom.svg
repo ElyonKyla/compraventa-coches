@@ -1,7 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" role="img" aria-label="Showroom premium oscuro">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#262014"/><stop offset="0.45" stop-color="#0c0d10"/><stop offset="1" stop-color="#050506"/></linearGradient></defs>
-  <rect width="1800" height="1100" fill="url(#bg)"/><path d="M0 740h1800v360H0z" fill="#050506"/><path d="M1180 0h620v1100h-620z" fill="#d4af39" opacity="0.08"/><circle cx="1370" cy="260" r="330" fill="#d4af39" opacity="0.13"/>
-  <path d="M480 695c73-110 174-173 303-190l278-36c172-22 329 16 469 114l155 108 95 19c39 8 67 43 67 83v31H420v-55c0-31 20-60 60-74z" fill="#191b20" stroke="#4f4632" stroke-width="8"/>
-  <path d="M790 524c116-34 239-39 370-16 98 18 187 54 267 108l67 45H635c37-68 89-114 155-137z" fill="#08090c" stroke="#d4af39" stroke-opacity="0.28" stroke-width="6"/>
-  <circle cx="783" cy="815" r="92" fill="#050506" stroke="#d4af39" stroke-width="11"/><circle cx="1530" cy="815" r="92" fill="#050506" stroke="#d4af39" stroke-width="11"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" role="img" aria-label="Showroom premium con vehículo oscuro">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2419"/><stop offset="0.42" stop-color="#101116"/><stop offset="1" stop-color="#050506"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151515"/><stop offset="1" stop-color="#060607"/></linearGradient>
+    <linearGradient id="car" x1="0" x2="1"><stop offset="0" stop-color="#0e1116"/><stop offset="0.52" stop-color="#34353c"/><stop offset="1" stop-color="#090a0e"/></linearGradient>
+    <radialGradient id="glow" cx="70%" cy="18%" r="48%"><stop offset="0" stop-color="#f1cf69" stop-opacity="0.38"/><stop offset="1" stop-color="#d4af39" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1800" height="1100" fill="url(#bg)"/>
+  <rect y="730" width="1800" height="370" fill="url(#floor)"/>
+  <path d="M1180 0h620l-120 1100h-620z" fill="#d4af39" opacity="0.055"/>
+  <ellipse cx="1320" cy="210" rx="600" ry="380" fill="url(#glow)"/>
+  <path d="M430 728c80-141 205-221 376-241l282-34c178-21 337 20 477 124l146 108 94 22c43 10 73 47 73 91v30H371v-47c0-23 20-41 59-53z" fill="url(#car)" stroke="#554a35" stroke-width="8"/>
+  <path d="M806 516c123-36 253-41 389-15 110 21 209 62 297 123l65 45H640c39-75 94-126 166-153z" fill="#080a0e" stroke="#d4af39" stroke-opacity="0.24" stroke-width="6"/>
+  <path d="M526 714h1018" stroke="#f1d36d" stroke-width="9" stroke-linecap="round" opacity="0.48"/>
+  <rect x="1514" y="700" width="150" height="16" rx="8" fill="#eed069" opacity="0.78"/>
+  <circle cx="792" cy="836" r="98" fill="#050506" stroke="#111215" stroke-width="24"/><circle cx="792" cy="836" r="64" fill="none" stroke="#dad8d1" stroke-width="9"/>
+  <circle cx="1540" cy="836" r="98" fill="#050506" stroke="#111215" stroke-width="24"/><circle cx="1540" cy="836" r="64" fill="none" stroke="#dad8d1" stroke-width="9"/>
+  <ellipse cx="1160" cy="958" rx="650" ry="48" fill="#000" opacity="0.44"/>
 </svg>
