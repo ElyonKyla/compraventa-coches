@@ -17,10 +17,10 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render the provisional brand', async () => {
+  it('should render the brand', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.textContent).toContain('Nombre Pendiente Motor');
+    expect(compiled.textContent).toContain('Taller & Cars Listanco');
   });
 });
