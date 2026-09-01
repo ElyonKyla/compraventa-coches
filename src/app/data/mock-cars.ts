@@ -21,8 +21,8 @@ export const MOCK_CARS: Car[] = [
     status: 'available',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1617814076668-ef0357a0d9f2?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1400&q=80',
+      '/images/car-mock-1.svg',
+      '/images/car-mock-2.svg',
     ],
   },
   {
@@ -45,8 +45,8 @@ export const MOCK_CARS: Car[] = [
     status: 'available',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?auto=format&fit=crop&w=1400&q=80',
+      '/images/car-mock-2.svg',
+      '/images/car-mock-4.svg',
     ],
   },
   {
@@ -69,8 +69,8 @@ export const MOCK_CARS: Car[] = [
     status: 'reserved',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1400&q=80',
+      '/images/car-mock-3.svg',
+      '/images/car-mock-1.svg',
     ],
   },
   {
@@ -83,7 +83,7 @@ export const MOCK_CARS: Car[] = [
     year: 2021,
     mileage: 52000,
     price: 41900,
-    fuel: 'Hibrido enchufable',
+    fuel: 'Híbrido enchufable',
     transmission: 'Automático',
     power: '320 CV',
     engine: '2.0 PHEV',
@@ -93,8 +93,8 @@ export const MOCK_CARS: Car[] = [
     status: 'available',
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1400&q=80',
+      '/images/car-mock-4.svg',
+      '/images/car-mock-2.svg',
     ],
   },
   {
@@ -117,14 +117,14 @@ export const MOCK_CARS: Car[] = [
     status: 'available',
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80',
+      '/images/car-mock-5.svg',
+      '/images/car-mock-3.svg',
     ],
   },
   {
     id: '6',
     slug: 'vehiculo-oculto-demo',
-    title: 'Vehiculo oculto demo',
+    title: 'Vehículo oculto demo',
     brand: 'Demo',
     model: 'Oculto',
     year: 2024,
@@ -132,9 +132,9 @@ export const MOCK_CARS: Car[] = [
     price: 99999,
     fuel: 'Gasolina',
     transmission: 'Manual',
-    description: 'Este registro sirve para comprobar que los vehiculos ocultos no aparecen en el escaparate.',
+    description: 'Este registro sirve para comprobar que los vehículos ocultos no aparecen en el escaparate.',
     status: 'hidden',
     featured: false,
-    images: ['https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80'],
+    images: ['/images/car-mock-1.svg'],
   },
 ];

@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100%;
 }
 
 .brand,
@@ -23,7 +24,13 @@
   color: #f7f3ea;
   font-weight: 700;
   gap: 0.75rem;
+  line-height: 1.15;
+  min-width: 0;
   text-decoration: none;
+}
+
+.brand span:last-child {
+  overflow-wrap: anywhere;
 }
 
 .brand-mark {
@@ -57,6 +64,7 @@
 .call-link {
   border: 1px solid rgba(212, 175, 57, 0.55);
   color: #f7f3ea;
+  flex: 0 0 auto;
   padding: 0.65rem 1rem;
 }
 
@@ -64,9 +72,25 @@
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.9rem;
   }
 
   .nav {
     flex-wrap: wrap;
+  }
+
+  .call-link {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    padding-inline: 0.85rem;
+  }
+
+  .brand {
+    font-size: 0.95rem;
   }
 }

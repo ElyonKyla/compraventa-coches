@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="SUV compacto premium verde oscuro">
+  <rect width="1600" height="1000" fill="#070b09"/><path d="M0 690h1600v310H0z" fill="#050506"/><circle cx="1220" cy="230" r="280" fill="#274235" opacity="0.75"/><circle cx="1220" cy="230" r="150" fill="#d4af39" opacity="0.12"/>
+  <path d="M142 668c45-125 144-202 298-231l253-47c161-30 311 10 451 120l167 132 142 34c40 10 68 45 68 86v55H91v-62c0-38 18-69 51-87z" fill="#17211c" stroke="#59675b" stroke-width="8"/>
+  <path d="M438 458h254c151 0 281 41 389 124l86 66H291c35-92 84-155 147-190z" fill="#08100d" stroke="#d4af39" stroke-opacity="0.3" stroke-width="6"/>
+  <circle cx="425" cy="811" r="106" fill="#050506" stroke="#d4af39" stroke-width="11"/><circle cx="425" cy="811" r="47" fill="#26372f"/>
+  <circle cx="1187" cy="811" r="106" fill="#050506" stroke="#d4af39" stroke-width="11"/><circle cx="1187" cy="811" r="47" fill="#26372f"/>
+</svg>

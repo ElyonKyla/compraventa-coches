@@ -14,6 +14,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: clip;
+  width: 100%;
+}
+
 body {
   background:
     radial-gradient(circle at top left, rgba(212, 175, 57, 0.14), transparent 28rem),
@@ -24,6 +30,7 @@ body {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 

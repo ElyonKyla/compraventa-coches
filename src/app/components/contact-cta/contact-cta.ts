@@ -6,5 +6,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './contact-cta.scss',
 })
 export class ContactCta {
-  readonly title = input('Consulta disponibilidad por telefono');
+  readonly title = input('Consulta disponibilidad por teléfono');
 }

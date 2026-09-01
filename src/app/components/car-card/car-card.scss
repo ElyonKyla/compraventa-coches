@@ -1,6 +1,7 @@
 .car-card {
-  background: #141416;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(21, 21, 24, 0.98), rgba(14, 14, 16, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.18);
   overflow: hidden;
 }
 
@@ -35,7 +36,7 @@ img {
 }
 
 .content {
-  padding: 1.15rem;
+  padding: 1.25rem;
 }
 
 .meta {
@@ -46,6 +47,7 @@ img {
 
 h3 {
   font-size: 1.2rem;
+  line-height: 1.25;
   margin: 0;
 }
 
@@ -69,6 +71,11 @@ dl {
   margin: 0;
 }
 
+dt,
+dd {
+  overflow-wrap: anywhere;
+}
+
 dt {
   color: #777;
   font-size: 0.72rem;
@@ -76,4 +83,10 @@ dt {
 
 dd {
   margin: 0.2rem 0 0;
+}
+
+@media (max-width: 420px) {
+  dl {
+    grid-template-columns: 1fr;
+  }
 }

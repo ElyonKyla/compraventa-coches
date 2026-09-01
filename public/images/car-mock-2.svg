@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Coupe premium gris">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12151a"/><stop offset="1" stop-color="#050506"/></linearGradient></defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><path d="M0 750h1600v250H0z" fill="#0a0a0b"/><circle cx="310" cy="210" r="220" fill="#d4af39" opacity="0.12"/>
+  <path d="M154 675c69-94 166-148 291-163l244-31c183-23 342 13 475 109l171 123 119 25c36 8 61 39 61 76v29H103v-55c0-48 18-86 51-113z" fill="#20232a" stroke="#65605a" stroke-width="8"/>
+  <path d="M455 530c94-39 219-48 376-27 103 13 192 48 268 104l77 57H300c42-63 93-108 155-134z" fill="#090a0d" stroke="#d4af39" stroke-opacity="0.28" stroke-width="6"/>
+  <circle cx="446" cy="830" r="96" fill="#050506" stroke="#b9b9b9" stroke-width="10"/><circle cx="446" cy="830" r="38" fill="#2d3037"/>
+  <circle cx="1197" cy="830" r="96" fill="#050506" stroke="#b9b9b9" stroke-width="10"/><circle cx="1197" cy="830" r="38" fill="#2d3037"/>
+</svg>

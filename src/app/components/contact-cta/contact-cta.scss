@@ -1,7 +1,10 @@
 .contact-cta {
   align-items: center;
-  background: linear-gradient(135deg, rgba(212, 175, 57, 0.16), rgba(20, 20, 22, 0.9));
-  border: 1px solid rgba(212, 175, 57, 0.28);
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 57, 0.2), transparent 18rem),
+    linear-gradient(135deg, rgba(23, 22, 18, 0.98), rgba(15, 15, 17, 0.96));
+  border: 1px solid rgba(212, 175, 57, 0.3);
+  box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.22);
   display: flex;
   gap: 1.5rem;
   justify-content: space-between;
@@ -18,6 +21,8 @@
 
 h2 {
   color: #fff;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.05;
   margin: 0;
 }
 
@@ -35,7 +40,9 @@ p:last-child {
 
 a {
   border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
   color: #f7f3ea;
+  font-weight: 700;
   padding: 0.85rem 1rem;
   text-align: center;
   text-decoration: none;
@@ -50,5 +57,9 @@ a:first-child {
   .contact-cta {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .phones {
+    min-width: 0;
   }
 }

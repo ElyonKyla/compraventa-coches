@@ -1,5 +1,5 @@
 .detail-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .detail-header a,
@@ -30,11 +30,12 @@ h1 {
 
 .detail-layout {
   display: grid;
-  gap: 1.5rem;
+  gap: clamp(1.25rem, 3vw, 2rem);
   grid-template-columns: minmax(0, 1.5fr) minmax(20rem, 0.8fr);
 }
 
 aside {
+  align-content: start;
   display: grid;
   gap: 1rem;
 }
@@ -58,6 +59,7 @@ aside {
 
 .call {
   background: #d4af39;
+  border-radius: 999px;
   color: #111;
   font-weight: 700;
   padding: 1rem;
@@ -67,8 +69,8 @@ aside {
 
 .content-block,
 .not-found {
-  background: #141416;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(20, 20, 22, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   margin: 1.5rem 0;
   padding: clamp(1.25rem, 4vw, 2rem);
 }
@@ -98,5 +100,11 @@ ul {
   .detail-layout,
   ul {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    overflow-wrap: anywhere;
   }
 }

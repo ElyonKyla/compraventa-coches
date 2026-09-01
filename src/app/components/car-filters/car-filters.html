@@ -1,4 +1,4 @@
-<section class="filters" aria-label="Filtros de vehiculos">
+<section class="filters" aria-label="Filtros de vehículos">
   <label>
     Marca
     <select [ngModel]="value().brand" (ngModelChange)="updateFilter('brand', $event)">
@@ -30,9 +30,9 @@
   </label>
 
   <label>
-    Precio maximo
+    Precio máximo
     <select [ngModel]="value().maxPrice" (ngModelChange)="updateFilter('maxPrice', $event)">
-      <option [ngValue]="null">Sin limite</option>
+      <option [ngValue]="null">Sin límite</option>
       <option [ngValue]="40000">Hasta 40.000 €</option>
       <option [ngValue]="50000">Hasta 50.000 €</option>
       <option [ngValue]="70000">Hasta 70.000 €</option>
