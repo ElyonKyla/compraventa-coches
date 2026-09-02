@@ -1,59 +1,116 @@
-# CompraventaCoches
+# Taller & Cars Listanco
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.5.
+Car stock website for **Taller & Cars Listanco**.
 
-## Development server
+The project is built with Angular and deployed on Netlify.
 
-To start a local development server, run:
+## Live Site
+
+https://tallercarslistanco.netlify.app
+
+## Tech Stack
+
+- Angular
+- Custom SCSS/CSS
+- Directus as CMS/admin panel
+- Netlify for deployment
+
+## Current Status
+
+The first frontend version is working with these routes:
+
+- `/`
+- `/stock`
+- `/coches/:slug`
+- `/contacto`
+
+The frontend currently uses mock data from `src/app/data/mock-cars.ts`.
+
+Directus has been prepared locally, but it is not connected to the Angular car service yet.
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open the app in the browser:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Build
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Create a production build:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The site is deployed on Netlify as a static SPA.
 
-## Running unit tests
+Netlify publish directory:
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+```text
+dist/compraventa-coches/browser
 ```
 
-## Running end-to-end tests
+## Local Directus
 
-For end-to-end (e2e) testing, run:
+Directus is used as the admin panel for managing cars.
 
-```bash
-ng e2e
+Local URL:
+
+```text
+http://localhost:8055
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Main collection:
 
-## Additional Resources
+```text
+cars
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Main collection fields:
+
+- `slug`
+- `Titulo`
+- `Marca`
+- `Modelo`
+- `Version`
+- `Anio`
+- `Kilometraje`
+- `Precio`
+- `Combustible`
+- `Cambio`
+- `Potencia`
+- `Motor`
+- `Descripcion`
+- `destacado`
+- `imagenes`
+- `status`
+
+Status values:
+
+- `available`: available
+- `reserved`: reserved
+- `hidden`: hidden
+
+The frontend should only display cars with `available` or `reserved` status.
+
+## Pending Work
+
+- Connect `CarsService` to Directus.
+- Map Directus fields to the current frontend car model.
+- Load images from Directus Files.
+- Replace mock data or keep it as a fallback.
+- Add the final logo once it is ready.
