@@ -1,0 +1,14 @@
+services:
+  directus:
+    image: directus/directus:11
+    ports:
+      - "8055:8055"
+    env_file:
+      - .env
+    environment:
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /directus/database/data.db
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
