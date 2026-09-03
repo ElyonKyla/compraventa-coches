@@ -1,8 +1,8 @@
 .site-header {
   align-items: center;
   backdrop-filter: blur(18px);
-  background: rgba(10, 10, 12, 0.82);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(28, 28, 28, 0.88);
+  border-bottom: 1px solid rgba(159, 18, 22, 0.28);
   display: flex;
   gap: clamp(0.75rem, 2vw, 1.5rem);
   justify-content: space-between;
@@ -22,7 +22,7 @@
 }
 
 .brand {
-  color: #f7f3ea;
+  color: var(--color-gray-light);
   font-weight: 700;
   gap: 0.75rem;
   line-height: 1.15;
@@ -30,20 +30,13 @@
   text-decoration: none;
 }
 
-.brand span:last-child {
-  overflow-wrap: anywhere;
-}
-
-.brand-mark {
-  border: 1px solid #d4af39;
-  color: #d4af39;
-  display: grid;
-  font-size: 0.76rem;
+.brand-logo {
+  filter: drop-shadow(0 0.35rem 0.8rem rgba(0, 0, 0, 0.35));
   flex: 0 0 auto;
-  height: 2.35rem;
-  letter-spacing: 0.12em;
-  place-items: center;
-  width: 2.35rem;
+  height: clamp(2.6rem, 4.6vw, 3.25rem);
+  max-width: min(10rem, 46vw);
+  object-fit: contain;
+  width: auto;
 }
 
 .nav {
@@ -53,7 +46,7 @@
 .nav a,
 .call-link,
 .mobile-nav a {
-  color: #c9c9c9;
+  color: var(--color-gray-medium);
   font-size: 0.92rem;
   text-decoration: none;
 }
@@ -63,14 +56,18 @@
 .call-link:hover,
 .mobile-nav a.active,
 .mobile-nav a:hover {
-  color: #d4af39;
+  color: var(--color-red-accent);
 }
 
 .call-link {
-  border: 1px solid rgba(212, 175, 57, 0.55);
-  color: #f7f3ea;
+  border: 1px solid rgba(198, 32, 36, 0.62);
+  color: var(--color-gray-light);
   flex: 0 0 auto;
   padding: 0.58rem 0.9rem;
+}
+
+.call-link:hover {
+  border-color: var(--color-red-accent);
 }
 
 .menu-toggle,
@@ -80,8 +77,8 @@
 
 .menu-toggle {
   background: transparent;
-  border: 1px solid rgba(212, 175, 57, 0.45);
-  color: #f7f3ea;
+  border: 1px solid rgba(198, 32, 36, 0.45);
+  color: var(--color-gray-light);
   cursor: pointer;
   flex: 0 0 auto;
   height: 2.35rem;
@@ -102,7 +99,7 @@
 }
 
 .mobile-nav {
-  background: rgba(10, 10, 12, 0.96);
+  background: rgba(28, 28, 28, 0.97);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.28);
   left: 0.85rem;
@@ -120,7 +117,7 @@
 
 .mobile-nav a:last-child {
   border: 0;
-  color: #f7f3ea;
+  color: var(--color-gray-light);
 }
 
 @media (max-width: 768px) {
@@ -154,6 +151,6 @@
   }
 
   .brand {
-    font-size: 0.95rem;
+    max-width: calc(100% - 3.1rem);
   }
 }

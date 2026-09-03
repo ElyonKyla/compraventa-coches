@@ -1,5 +1,12 @@
 :root {
   color-scheme: dark;
+  --color-bg: #1c1c1c;
+  --color-red: #9f1216;
+  --color-red-dark: #680d0f;
+  --color-red-accent: #c62024;
+  --color-gray-light: #dddddd;
+  --color-gray-medium: #a3a3a3;
+  --color-gray-dark: #616061;
   font-family:
     Inter,
     ui-sans-serif,
@@ -22,9 +29,9 @@ body {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(212, 175, 57, 0.14), transparent 28rem),
-    linear-gradient(180deg, #050506 0%, #0b0b0d 45%, #080809 100%);
-  color: #f7f3ea;
+    radial-gradient(circle at top left, rgba(159, 18, 22, 0.18), transparent 28rem),
+    linear-gradient(180deg, #151515 0%, var(--color-bg) 45%, #111 100%);
+  color: var(--color-gray-light);
   margin: 0;
   min-height: 100dvh;
 }

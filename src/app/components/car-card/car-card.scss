@@ -1,5 +1,5 @@
 .car-card {
-  background: linear-gradient(180deg, rgba(21, 21, 24, 0.98), rgba(14, 14, 16, 0.98));
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.98), rgba(14, 14, 16, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -24,8 +24,8 @@ img {
 }
 
 .badge {
-  background: #d4af39;
-  color: #111;
+  background: var(--color-red-dark);
+  color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -58,7 +58,7 @@ h3 a {
 }
 
 .price {
-  color: #d4af39;
+  color: var(--color-red-accent);
   font-size: 1.35rem;
   font-weight: 700;
   margin: 0.85rem 0 1rem;

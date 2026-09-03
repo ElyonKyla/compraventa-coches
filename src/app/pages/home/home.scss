@@ -11,7 +11,7 @@
 }
 
 .eyebrow {
-  color: #d4af39;
+  color: var(--color-red-accent);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   margin: 0 0 0.35rem;
@@ -26,7 +26,7 @@ h2 {
 }
 
 .section-header a {
-  color: #d4af39;
+  color: var(--color-red-accent);
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ article {
 }
 
 span {
-  color: #d4af39;
+  color: var(--color-red-accent);
 }
 
 h3 {

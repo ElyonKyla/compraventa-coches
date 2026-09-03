@@ -1,8 +1,8 @@
 .hero {
   background:
-    linear-gradient(90deg, rgba(8, 8, 10, 0.98) 0%, rgba(8, 8, 10, 0.82) 48%, rgba(8, 8, 10, 0.38) 100%),
+    linear-gradient(90deg, rgba(12, 12, 13, 0.98) 0%, rgba(28, 28, 28, 0.84) 48%, rgba(104, 13, 15, 0.28) 100%),
     url('/images/hero-showroom.svg') center/cover;
-  border: 1px solid rgba(212, 175, 57, 0.18);
+  border: 1px solid rgba(159, 18, 22, 0.28);
   box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.32);
   min-height: clamp(31rem, 46vw, 39rem);
   overflow: hidden;
@@ -14,7 +14,7 @@
 }
 
 .eyebrow {
-  color: #d4af39;
+  color: var(--color-red-accent);
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   margin: 0 0 1rem;
@@ -53,13 +53,22 @@ h1 {
 }
 
 .primary {
-  background: #d4af39;
-  color: #111;
+  background: var(--color-red);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--color-red-accent);
 }
 
 .secondary {
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
+}
+
+.secondary:hover {
+  border-color: rgba(198, 32, 36, 0.75);
+  color: var(--color-red-accent);
 }
 
 @media (max-width: 620px) {

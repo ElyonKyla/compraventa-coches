@@ -1,7 +1,6 @@
 <header class="site-header">
   <a class="brand" routerLink="/" aria-label="Ir al inicio" (click)="closeMenu()">
-    <span class="brand-mark">TCL</span>
-    <span>Taller &amp; Cars Listanco</span>
+    <img class="brand-logo" src="/images/logo-listanco-header.png" alt="Taller &amp; Cars Listanco" />
   </a>
 
   <nav class="nav" aria-label="Navegación principal">
@@ -10,7 +9,7 @@
     <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
   </nav>
 
-  <a class="call-link" href="tel:+34900111222">Llamar</a>
+  <a class="call-link" href="tel:607923867">Llamar</a>
 
   <button
     class="menu-toggle"
@@ -29,6 +28,6 @@
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
     <a routerLink="/stock" routerLinkActive="active" (click)="closeMenu()">Stock</a>
     <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
-    <a href="tel:+34900111222" (click)="closeMenu()">Llamar</a>
+    <a href="tel:607923867" (click)="closeMenu()">Llamar</a>
   </nav>
 </header>

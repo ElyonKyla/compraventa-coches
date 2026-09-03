@@ -4,12 +4,12 @@
 
 .detail-header a,
 .not-found a {
-  color: #d4af39;
+  color: var(--color-red-accent);
   text-decoration: none;
 }
 
 .eyebrow {
-  color: #d4af39;
+  color: var(--color-red-accent);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   margin: 1rem 0 0.7rem;
@@ -42,8 +42,8 @@ aside {
 }
 
 .badge {
-  background: #d4af39;
-  color: #111;
+  background: var(--color-red-dark);
+  color: #fff;
   display: inline-block;
   font-weight: 700;
   justify-self: start;
@@ -52,20 +52,24 @@ aside {
 }
 
 .price {
-  color: #d4af39;
+  color: var(--color-red-accent);
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin: 0;
 }
 
 .call {
-  background: #d4af39;
+  background: var(--color-red);
   border-radius: 999px;
-  color: #111;
+  color: #fff;
   font-weight: 700;
   padding: 1rem;
   text-align: center;
   text-decoration: none;
+}
+
+.call:hover {
+  background: var(--color-red-accent);
 }
 
 .content-block,

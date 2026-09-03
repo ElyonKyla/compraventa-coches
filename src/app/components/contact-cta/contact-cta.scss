@@ -1,9 +1,9 @@
 .contact-cta {
   align-items: start;
   background:
-    radial-gradient(circle at top right, rgba(212, 175, 57, 0.2), transparent 18rem),
-    linear-gradient(135deg, rgba(23, 22, 18, 0.98), rgba(15, 15, 17, 0.96));
-  border: 1px solid rgba(212, 175, 57, 0.3);
+    radial-gradient(circle at top right, rgba(159, 18, 22, 0.26), transparent 18rem),
+    linear-gradient(135deg, rgba(28, 28, 28, 0.98), rgba(15, 15, 17, 0.96));
+  border: 1px solid rgba(159, 18, 22, 0.34);
   box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.22);
   display: flex;
   gap: clamp(1.25rem, 4vw, 3rem);
@@ -18,7 +18,7 @@
 }
 
 .eyebrow {
-  color: #d4af39;
+  color: var(--color-red-accent);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   margin: 0 0 0.5rem;
@@ -50,7 +50,7 @@ p:last-child {
 a {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
-  color: #f7f3ea;
+  color: var(--color-gray-light);
   font-weight: 700;
   padding: 0.85rem 1rem;
   text-align: center;
@@ -58,8 +58,12 @@ a {
 }
 
 a:first-child {
-  background: #d4af39;
-  color: #111;
+  background: var(--color-red);
+  color: #fff;
+}
+
+a:first-child:hover {
+  background: var(--color-red-accent);
 }
 
 @media (max-width: 760px) {

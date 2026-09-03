@@ -26,7 +26,7 @@ button {
 }
 
 button.active {
-  border-color: #d4af39;
+  border-color: var(--color-red-accent);
 }
 
 button img {
