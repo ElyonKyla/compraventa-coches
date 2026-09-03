@@ -12,9 +12,9 @@ import { CarsService } from '../../services/cars.service';
 })
 export class Stock {
   private readonly carsService = inject(CarsService);
-  protected readonly brands = this.carsService.getBrands();
-  protected readonly fuels = this.carsService.getFuels();
-  protected readonly transmissions = this.carsService.getTransmissions();
+  protected readonly brands = computed(() => this.carsService.getBrands());
+  protected readonly fuels = computed(() => this.carsService.getFuels());
+  protected readonly transmissions = computed(() => this.carsService.getTransmissions());
   protected readonly filters = signal<CarFilterValue>({ brand: '', fuel: '', transmission: '', maxPrice: null });
 
   protected readonly filteredCars = computed(() => {

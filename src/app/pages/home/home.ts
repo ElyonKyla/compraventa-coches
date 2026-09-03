@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CarGrid } from '../../components/car-grid/car-grid';
@@ -14,5 +14,5 @@ import { CarsService } from '../../services/cars.service';
 })
 export class Home {
   private readonly carsService = inject(CarsService);
-  protected readonly featuredCars = this.carsService.getFeaturedCars();
+  protected readonly featuredCars = computed(() => this.carsService.getFeaturedCars());
 }
