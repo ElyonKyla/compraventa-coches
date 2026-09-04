@@ -1,5 +1,16 @@
 <section class="gallery" aria-label="Galería del vehículo">
-  <img class="main-image" [src]="images()[selectedIndex()]" [alt]="title()" />
+  <div class="main-frame">
+    <img class="main-image" [src]="images()[selectedIndex()]" [alt]="title()" />
+
+    @if (images().length > 1) {
+      <button class="gallery-nav previous" type="button" aria-label="Foto anterior" (click)="previousImage()">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <button class="gallery-nav next" type="button" aria-label="Foto siguiente" (click)="nextImage()">
+        <span aria-hidden="true">›</span>
+      </button>
+    }
+  </div>
 
   @if (images().length > 1) {
     <div class="thumbs">
