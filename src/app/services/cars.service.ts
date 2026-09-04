@@ -8,6 +8,12 @@ interface DirectusCarsResponse {
   data: DirectusCar[];
 }
 
+type DirectusFileRelation = string | { id?: string | null };
+
+interface DirectusCarImage {
+  directus_files_id?: DirectusFileRelation | null;
+}
+
 interface DirectusCar {
   id: number | string;
   status: CarStatus;
@@ -24,14 +30,37 @@ interface DirectusCar {
   Potencia?: string | null;
   Motor?: string | null;
   Descripcion: string;
+  Equipamiento?: string | null;
   destacado?: boolean | null;
-  imagenes?: unknown[];
+  imagenes?: DirectusCarImage[] | null;
 }
 
 @Injectable({ providedIn: 'root' })
 export class CarsService {
   private readonly http = inject(HttpClient);
-  private readonly directusUrl = 'http://localhost:8055/items/cars';
+  private readonly directusUrl = 'http://localhost:8055/items/cars?fields=*,imagenes.*';
+
+  private parseEquipment(equipment?: string | null): string[] {
+    if (!equipment) {
+      return [];
+    }
+
+    return equipment
+      .split(/\r?\n/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  private mapDirectusImages(images?: DirectusCarImage[] | null): string[] {
+    const directusImages = images
+      ?.map((image) => image.directus_files_id)
+      .map((file) => (typeof file === 'string' ? file : file?.id))
+      .filter((id): id is string => Boolean(id))
+      .map((id) => `http://localhost:8055/assets/${id}`);
+
+    return directusImages?.length ? directusImages : ['/images/car-mock-1.svg'];
+  }
+
   private readonly cars = signal<Car[]>(MOCK_CARS);
 
   constructor() {
@@ -89,10 +118,10 @@ export class CarsService {
       power: car.Potencia ?? undefined,
       engine: car.Motor ?? undefined,
       description: car.Descripcion,
-      equipment: [],
+      equipment: this.parseEquipment(car.Equipamiento),
       status: car.status,
       featured: Boolean(car.destacado),
-      images: ['/images/car-mock-1.svg'],
+      images: this.mapDirectusImages(car.imagenes),
     };
   }
 
