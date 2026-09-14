@@ -24,9 +24,8 @@ The first frontend version is working with these routes:
 - `/coches/:slug`
 - `/contacto`
 
-The frontend currently uses mock data from `src/app/data/mock-cars.ts`.
-
-Directus has been prepared locally, but it is not connected to the Angular car service yet.
+The production frontend reads the public car inventory from Directus on Railway. Local development uses
+Directus at `http://localhost:8055` and keeps mock cars as a development-only fallback.
 
 ## Local Development
 
@@ -40,6 +39,12 @@ Start the development server:
 
 ```bash
 ng serve
+```
+
+To run the development server against Directus on Railway instead:
+
+```bash
+npm run start:railway
 ```
 
 Open the app in the browser:
@@ -109,8 +114,4 @@ The frontend should only display cars with `available` or `reserved` status.
 
 ## Pending Work
 
-- Connect `CarsService` to Directus.
-- Map Directus fields to the current frontend car model.
-- Load images from Directus Files.
-- Replace mock data or keep it as a fallback.
 - Add the final logo once it is ready.

@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 
+import { DIRECTUS_CONFIG } from '../config/directus.config';
 import { MOCK_CARS } from '../data/mock-cars';
 import { Car, CarStatus } from '../models/car.model';
 
@@ -12,6 +13,7 @@ type DirectusFileRelation = string | { id?: string | null };
 
 interface DirectusCarImage {
   directus_files_id?: DirectusFileRelation | null;
+  sort?: number | null;
 }
 
 interface DirectusCar {
@@ -38,7 +40,15 @@ interface DirectusCar {
 @Injectable({ providedIn: 'root' })
 export class CarsService {
   private readonly http = inject(HttpClient);
-  private readonly directusUrl = 'http://localhost:8055/items/cars?fields=*,imagenes.*';
+  private readonly directus = inject(DIRECTUS_CONFIG);
+  private readonly directusUrl = `${this.directus.baseUrl}/items/cars`;
+  private readonly requestParams = new HttpParams()
+    .set(
+      'fields',
+      'id,status,slug,Titulo,Marca,Modelo,Version,Anio,Kilometraje,Precio,Combustible,Cambio,Potencia,Motor,Descripcion,destacado,Equipamiento,imagenes.id,imagenes.sort,imagenes.directus_files_id.id',
+    )
+    .set('filter', JSON.stringify({ status: { _in: ['available', 'reserved'] } }))
+    .set('deep[imagenes][_sort]', 'sort');
 
   private parseEquipment(equipment?: string | null): string[] {
     if (!equipment) {
@@ -52,16 +62,20 @@ export class CarsService {
   }
 
   private mapDirectusImages(images?: DirectusCarImage[] | null): string[] {
-    const directusImages = images
-      ?.map((image) => image.directus_files_id)
+    const directusImages = [...(images ?? [])]
+      .sort(
+        (left, right) =>
+          (left.sort ?? Number.MAX_SAFE_INTEGER) - (right.sort ?? Number.MAX_SAFE_INTEGER),
+      )
+      .map((image) => image.directus_files_id)
       .map((file) => (typeof file === 'string' ? file : file?.id))
       .filter((id): id is string => Boolean(id))
-      .map((id) => `http://localhost:8055/assets/${id}`);
+      .map((id) => `${this.directus.baseUrl}/assets/${id}`);
 
-    return directusImages?.length ? directusImages : ['/images/car-mock-1.svg'];
+    return directusImages.length ? directusImages : ['/images/car-mock-1.svg'];
   }
 
-  private readonly cars = signal<Car[]>(MOCK_CARS);
+  private readonly cars = signal<Car[]>(this.directus.useMocksOnError ? MOCK_CARS : []);
 
   constructor() {
     this.loadCarsFromDirectus();
@@ -92,14 +106,16 @@ export class CarsService {
   }
 
   private loadCarsFromDirectus(): void {
-    this.http.get<DirectusCarsResponse>(this.directusUrl).subscribe({
-      next: (response) => {
-        this.cars.set(response.data.map((car) => this.mapDirectusCar(car)));
-      },
-      error: () => {
-        this.cars.set(MOCK_CARS);
-      },
-    });
+    this.http
+      .get<DirectusCarsResponse>(this.directusUrl, { params: this.requestParams })
+      .subscribe({
+        next: (response) => {
+          this.cars.set(response.data.map((car) => this.mapDirectusCar(car)));
+        },
+        error: () => {
+          this.cars.set(this.directus.useMocksOnError ? MOCK_CARS : []);
+        },
+      });
   }
 
   private mapDirectusCar(car: DirectusCar): Car {
