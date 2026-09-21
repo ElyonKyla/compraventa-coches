@@ -13,7 +13,7 @@ import {
 } from '../config/seo.config';
 
 const FALLBACK_SEO: SeoData = {
-  title: 'Taller mecánico y compraventa | Taller & Cars Listanco',
+  title: 'Taller & Cars Listanco | Taller mecánico y compraventa',
   description:
     'Taller mecánico, reparación y rectificado de motores, compraventa de vehículos e importación de coches desde Alemania.',
   path: '/',

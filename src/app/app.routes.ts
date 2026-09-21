@@ -8,7 +8,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
     data: {
       seo: {
-        title: 'Taller mecánico y compraventa | Taller & Cars Listanco',
+        title: 'Taller & Cars Listanco | Taller mecánico y compraventa',
         description:
           'Taller mecánico, reparación y rectificado de motores, compraventa de vehículos e importación de coches desde Alemania.',
         path: '/',
