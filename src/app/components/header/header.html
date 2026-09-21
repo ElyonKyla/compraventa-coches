@@ -1,12 +1,22 @@
 <header class="site-header">
   <a class="brand" routerLink="/" aria-label="Ir al inicio" (click)="closeMenu()">
-    <img class="brand-logo" src="/images/logo-listanco-header-v3.png" alt="Taller &amp; Cars Listanco" />
+    <img
+      class="brand-logo"
+      src="/images/logo-listanco-header-v3.png"
+      width="760"
+      height="510"
+      alt="Taller &amp; Cars Listanco"
+    />
     <span class="brand-name">Taller &amp; Cars Listanco</span>
   </a>
 
   <nav class="nav" aria-label="Navegación principal">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
-    <a routerLink="/stock" routerLinkActive="active">Stock</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      >Inicio</a
+    >
+    <a routerLink="/taller" routerLinkActive="active">Taller</a>
+    <a routerLink="/stock" routerLinkActive="active">Vehículos</a>
+    <a routerLink="/importacion-coches-alemania" routerLinkActive="active">Importación</a>
     <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
   </nav>
 
@@ -26,8 +36,18 @@
   </button>
 
   <nav id="mobile-menu" class="mobile-nav" [class.open]="menuOpen()" aria-label="Navegación móvil">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
-    <a routerLink="/stock" routerLinkActive="active" (click)="closeMenu()">Stock</a>
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="closeMenu()"
+      >Inicio</a
+    >
+    <a routerLink="/taller" routerLinkActive="active" (click)="closeMenu()">Taller</a>
+    <a routerLink="/stock" routerLinkActive="active" (click)="closeMenu()">Vehículos</a>
+    <a routerLink="/importacion-coches-alemania" routerLinkActive="active" (click)="closeMenu()"
+      >Importación</a
+    >
     <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
     <a href="tel:695577147" (click)="closeMenu()">Llamar</a>
   </nav>

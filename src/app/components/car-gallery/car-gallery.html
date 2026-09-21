@@ -1,12 +1,27 @@
 <section class="gallery" aria-label="Galería del vehículo">
   <div class="main-frame">
-    <img class="main-image" [src]="images()[selectedIndex()]" [alt]="title()" />
+    <img
+      class="main-image"
+      [src]="images()[selectedIndex()]"
+      [alt]="title()"
+      fetchpriority="high"
+    />
 
     @if (images().length > 1) {
-      <button class="gallery-nav previous" type="button" aria-label="Foto anterior" (click)="previousImage()">
+      <button
+        class="gallery-nav previous"
+        type="button"
+        aria-label="Foto anterior"
+        (click)="previousImage()"
+      >
         <span aria-hidden="true">‹</span>
       </button>
-      <button class="gallery-nav next" type="button" aria-label="Foto siguiente" (click)="nextImage()">
+      <button
+        class="gallery-nav next"
+        type="button"
+        aria-label="Foto siguiente"
+        (click)="nextImage()"
+      >
         <span aria-hidden="true">›</span>
       </button>
     }
@@ -15,8 +30,12 @@
   @if (images().length > 1) {
     <div class="thumbs">
       @for (image of images(); track image; let index = $index) {
-        <button type="button" [class.active]="index === selectedIndex()" (click)="selectedIndex.set(index)">
-          <img [src]="image" [alt]="title() + ' imagen ' + (index + 1)" />
+        <button
+          type="button"
+          [class.active]="index === selectedIndex()"
+          (click)="selectedIndex.set(index)"
+        >
+          <img [src]="image" [alt]="title() + ' imagen ' + (index + 1)" loading="lazy" />
         </button>
       }
     </div>

@@ -76,6 +76,7 @@ export class CarsService {
   }
 
   private readonly cars = signal<Car[]>(this.directus.useMocksOnError ? MOCK_CARS : []);
+  readonly loading = signal(true);
 
   constructor() {
     this.loadCarsFromDirectus();
@@ -111,9 +112,11 @@ export class CarsService {
       .subscribe({
         next: (response) => {
           this.cars.set(response.data.map((car) => this.mapDirectusCar(car)));
+          this.loading.set(false);
         },
         error: () => {
           this.cars.set(this.directus.useMocksOnError ? MOCK_CARS : []);
+          this.loading.set(false);
         },
       });
   }

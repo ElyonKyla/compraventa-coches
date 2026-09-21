@@ -1,6 +1,14 @@
-@if (car(); as car) {
+@if (loading()) {
+  <section class="not-found" aria-live="polite">
+    <p class="eyebrow">Vehículos</p>
+    <h1>Cargando vehículo</h1>
+  </section>
+} @else if (car(); as car) {
   <section class="detail-header">
-    <a routerLink="/stock">Volver al stock</a>
+    <nav aria-label="Migas de pan">
+      <a routerLink="/">Inicio</a> / <a routerLink="/stock">Vehículos</a> /
+      <span>{{ car.title }}</span>
+    </nav>
     <p class="eyebrow">{{ car.brand }} {{ car.model }}</p>
     <h1>{{ car.title }}</h1>
     @if (car.version) {
@@ -21,7 +29,7 @@
   </section>
 
   <section class="content-block">
-      <h2>Descripción</h2>
+    <h2>Descripción</h2>
     <p>{{ car.description }}</p>
   </section>
 

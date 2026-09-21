@@ -30,10 +30,14 @@ h2 {
   text-decoration: none;
 }
 
-.trust {
+.activities {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.activities .section-header {
+  grid-column: 1 / -1;
 }
 
 article {
@@ -51,6 +55,15 @@ h3 {
   margin: 0.8rem 0;
 }
 
+h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h3 a:hover {
+  color: var(--color-red-accent);
+}
+
 article p {
   color: #bebebe;
   line-height: 1.7;
@@ -63,7 +76,7 @@ article p {
     flex-direction: column;
   }
 
-  .trust {
+  .activities {
     grid-template-columns: 1fr;
   }
 }

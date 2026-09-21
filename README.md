@@ -1,20 +1,20 @@
 # Taller & Cars Listanco
 
-Public vehicle stock website for **Taller & Cars Listanco**, built with Angular and backed by Directus.
+Public website for **Taller & Cars Listanco**, built with Angular and backed by Directus for vehicle inventory.
 
 ## Active Services
 
-- Website: <https://tallercarslistanco.netlify.app>
+- Website: <https://tallercarslistanco.es>
 - Public API: <https://directus-production-5522.up.railway.app>
 - Directus admin panel: <https://directus-production-5522.up.railway.app/admin>
 
-The published site is a static Angular SPA hosted by Netlify. It reads public inventory directly from
-Directus on Railway, so the website does not depend on a developer computer or a local Docker instance
-being online.
+The published site is a prerendered static Angular application hosted by Netlify and hydrated in the
+browser. It reads public inventory from Directus on Railway, so the website does not depend on a developer
+computer or a local Docker instance being online.
 
 ## Architecture
 
-- **Frontend:** Angular 22 with custom SCSS and client-side routing.
+- **Frontend:** Angular 22 with custom SCSS, static prerendering, hydration, and client-side navigation.
 - **Hosting:** Netlify, deployed automatically from `origin/main`.
 - **CMS/API:** Directus 12.3.1 on Railway.
 - **Online data services:** PostgreSQL/PostGIS, Redis, and S3 object storage.
@@ -26,12 +26,15 @@ is free or has a fixed cost.
 ## Application Routes
 
 - `/`
+- `/taller`
 - `/stock`
 - `/coches/:slug`
+- `/importacion-coches-alemania`
 - `/contacto`
 
-Netlify serves `index.html` for all routes through the redirect in `netlify.toml`, allowing direct visits
-and browser reloads on Angular routes.
+Stable routes and public vehicle details are prerendered as HTML. Netlify serves existing generated files
+directly and returns `404.html` for paths that were not generated. Direct vehicle URLs therefore require a
+new build after inventory or slug changes.
 
 ## Requirements
 
@@ -42,7 +45,7 @@ and browser reloads on Angular routes.
 Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 ## Development Modes
@@ -107,12 +110,8 @@ The production output is:
 dist/compraventa-coches/browser
 ```
 
-`netlify.toml` uses `npm run build`, publishes that directory, and configures the SPA fallback.
-
-The latest reported integration verification on September 15, 2026 covered five passing tests, a
-successful production build, and normal-browser checks on desktop and mobile. It included the stock page,
-direct detail navigation and reload, nine ordered photos, thumbnails, circular gallery navigation, and
-the absence of console, network, and CORS errors. These checks were not rerun solely for this README edit.
+`netlify.toml` uses `npm run build` and publishes that directory. The build generates the sitemap,
+prerenders public routes, and runs the SEO output verifier before it can succeed.
 
 ## Directus Data Model
 
@@ -164,13 +163,14 @@ is migration state, not a catalog limit; additional records can be managed throu
 
 Railway currently allows these frontend origins:
 
+- `https://tallercarslistanco.es`
 - `https://tallercarslistanco.netlify.app`
 - `http://localhost:4200`
 - `http://127.0.0.1:4200`
 - `http://127.0.0.1:4300`
 
-When a custom domain starts serving the application, add its exact production origin to the Directus
-CORS allowlist and verify browser requests before removing any origin still in use.
+Keep the exact production origin in the Directus CORS allowlist and verify browser requests before removing
+any origin still in use.
 
 ## Local Directus Notes
 
@@ -200,17 +200,22 @@ secrets. Local Directus data and secret paths are excluded by `.gitignore`.
 ## Deployment
 
 Netlify deploys `main` automatically using the repository configuration. A successful push is not enough
-to confirm publication: check that the Netlify deploy is ready and then verify the public site, direct SPA
+to confirm publication: check that the Netlify deploy is ready and then verify the public site, direct
 routes, Railway API requests, CORS, and image loading in a normal browser.
 
-## Planned Domains
+The production build generates `sitemap.xml` from the current public Directus slugs and prerenders the
+five stable routes plus each public vehicle detail. A Directus publication, removal, or slug change therefore
+requires a new Netlify build to keep generated HTML and the sitemap current. Until that build completes,
+new slugs are not available as direct URLs and removed slugs may retain their previous generated file.
 
-The intended domains are not registered or active yet:
+`robots.txt`, `sitemap.xml`, static assets, and prerendered routes are served directly. Missing paths use the
+static `404.html` response.
 
-- `tallercarslistanco.es`: intended primary domain.
-- `autoslistanco.es`: intended historical-name domain, planned to redirect to the primary domain.
+## Production Domains
 
-Availability was observed at OVHcloud, but there is no confirmation of purchase, registration, DNS,
-HTTPS, or redirect configuration. Required follow-up work includes purchasing the domains, connecting the
-primary domain to Netlify, configuring DNS and HTTPS, redirecting the secondary domain and `www` variants,
-adding the final production origin to the Directus CORS allowlist, and repeating public browser tests.
+The canonical production origin is:
+
+- <https://tallercarslistanco.es>
+
+`netlify.toml` redirects HTTP and `www` variants of the primary domain to that HTTPS origin. It also retains
+the existing redirects from the configured `autolistanco.es` variants.

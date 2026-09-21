@@ -3,6 +3,24 @@
   publish = "dist/compraventa-coches/browser"
 
 [[redirects]]
+  from = "http://tallercarslistanco.es/*"
+  to = "https://tallercarslistanco.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.tallercarslistanco.es/*"
+  to = "https://tallercarslistanco.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.tallercarslistanco.es/*"
+  to = "https://tallercarslistanco.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "http://autolistanco.es/*"
   to = "https://tallercarslistanco.es/:splat"
   status = 301
@@ -28,5 +46,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404

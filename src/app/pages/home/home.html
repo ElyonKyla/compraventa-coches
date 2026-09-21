@@ -1,30 +1,45 @@
 <app-hero />
 
-<section class="section">
+<section class="activities section" aria-labelledby="activities-title">
   <div class="section-header">
-    <p class="eyebrow">Destacados</p>
-    <h2>Selección actual</h2>
-    <a routerLink="/stock">Ver todos</a>
+    <div>
+      <p class="eyebrow">Actividad</p>
+      <h2 id="activities-title">Servicios y vehículos</h2>
+    </div>
   </div>
-  <app-car-grid [cars]="featuredCars()" />
-</section>
-
-<section class="trust section">
   <article>
     <span>01</span>
-    <h3>Stock filtrado</h3>
-    <p>Vehículos visibles solo cuando están disponibles o reservados, con información esencial clara.</p>
+    <h3><a routerLink="/taller">Taller mecánico</a></h3>
+    <p>Información y contacto para consultas relacionadas con la actividad de taller mecánico.</p>
   </article>
   <article>
     <span>02</span>
-    <h3>Trato directo</h3>
-    <p>Contacto telefónico visible para resolver dudas sin formularios, emails ni integraciones externas.</p>
+    <h3><a routerLink="/taller">Reparación y rectificado de motores</a></h3>
+    <p>Consulta directamente con el taller sobre reparación y rectificado de motores.</p>
   </article>
   <article>
     <span>03</span>
-    <h3>Base preparada</h3>
-    <p>Estructura lista para conectar más adelante con Directus como panel privado de contenidos.</p>
+    <h3><a routerLink="/stock">Compraventa de vehículos</a></h3>
+    <p>Consulta las fichas de los vehículos que se encuentran publicados en la web.</p>
+  </article>
+  <article>
+    <span>04</span>
+    <h3><a routerLink="/importacion-coches-alemania">Importación de coches desde Alemania</a></h3>
+    <p>Información y contacto directo sobre la actividad de importación desde Alemania.</p>
   </article>
 </section>
 
-<app-contact-cta title="Hablemos del vehículo que buscas" />
+@if (featuredCars().length) {
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Vehículos</p>
+        <h2>Vehículos destacados</h2>
+      </div>
+      <a routerLink="/stock">Ver todos los vehículos</a>
+    </div>
+    <app-car-grid [cars]="featuredCars()" />
+  </section>
+}
+
+<app-contact-cta title="Contacta con Taller & Cars Listanco" />

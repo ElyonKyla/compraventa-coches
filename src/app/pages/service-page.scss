@@ -1,0 +1,78 @@
+.service-page {
+  max-width: 68rem;
+}
+
+.eyebrow {
+  color: var(--color-red-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.7rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #fff;
+  font-size: clamp(2.25rem, 4.8vw, 4.35rem);
+  letter-spacing: -0.055em;
+  line-height: 1.03;
+  margin: 0;
+  max-width: 15ch;
+}
+
+.lead {
+  color: #cfcfcf;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 48rem;
+}
+
+.content-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+article {
+  background: linear-gradient(180deg, rgba(22, 22, 25, 0.98), rgba(15, 15, 17, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+h2 {
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+article p {
+  color: #cfcfcf;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.actions a {
+  border: 1px solid rgba(198, 32, 36, 0.62);
+  color: var(--color-gray-light);
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+}
+
+.actions a:first-child {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
