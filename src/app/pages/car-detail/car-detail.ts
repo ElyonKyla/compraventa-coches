@@ -29,7 +29,7 @@ export class CarDetail {
         return;
       }
 
-      const path = `/coches/${encodeURIComponent(slug)}`;
+      const path = `/coches/${encodeURIComponent(slug)}/`;
       if (!car) {
         this.seo.update({
           title: 'Vehículo no disponible | Taller & Cars Listanco',

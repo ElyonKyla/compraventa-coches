@@ -8,7 +8,7 @@ const output = new URL('../dist/compraventa-coches/browser/', import.meta.url);
 const outputPath = output.pathname;
 const sitemapPath = join(outputPath, 'sitemap.xml');
 const robotsPath = join(outputPath, 'robots.txt');
-const staticPaths = ['/', '/taller', '/stock', '/importacion-coches-alemania', '/contacto'];
+const staticPaths = ['/', '/taller/', '/stock/', '/importacion-coches-alemania/', '/contacto/'];
 
 function validateStructuredData(data, url) {
   if (data['@context'] !== 'https://schema.org') {
@@ -208,7 +208,7 @@ if (!response.ok) {
 const { data } = await response.json();
 const expectedUrls = [
   ...staticPaths.map((path) => `${siteUrl}${path}`),
-  ...data.map(({ slug }) => `${siteUrl}/coches/${encodeURIComponent(slug)}`),
+  ...data.map(({ slug }) => `${siteUrl}/coches/${encodeURIComponent(slug)}/`),
 ].sort();
 if (JSON.stringify([...urls].sort()) !== JSON.stringify([...new Set(expectedUrls)])) {
   throw new Error(

@@ -24,7 +24,7 @@ export const routes: Routes = [
         title: 'Taller mecánico y rectificado de motores | Taller & Cars Listanco',
         description:
           'Taller mecánico, reparación y rectificado de motores en Taller & Cars Listanco. Contacto directo para solicitar información.',
-        path: '/taller',
+        path: '/taller/',
         structuredData: BUSINESS_STRUCTURED_DATA,
       },
     },
@@ -37,7 +37,7 @@ export const routes: Routes = [
         title: 'Compraventa de vehículos | Taller & Cars Listanco',
         description:
           'Consulta los vehículos publicados por Taller & Cars Listanco para compraventa, con información de cada unidad.',
-        path: '/stock',
+        path: '/stock/',
         structuredData: BUSINESS_STRUCTURED_DATA,
       },
     },
@@ -62,7 +62,7 @@ export const routes: Routes = [
         title: 'Importación de coches desde Alemania | Taller & Cars Listanco',
         description:
           'Información sobre la importación de coches desde Alemania de Taller & Cars Listanco y contacto directo para consultas.',
-        path: '/importacion-coches-alemania',
+        path: '/importacion-coches-alemania/',
         structuredData: [BUSINESS_STRUCTURED_DATA, IMPORT_SERVICE_STRUCTURED_DATA],
       },
     },
@@ -75,7 +75,7 @@ export const routes: Routes = [
         title: 'Contacto, horario y ubicación | Taller & Cars Listanco',
         description:
           'Teléfonos, horario y ubicación de Taller & Cars Listanco en Carretera General, 2, 32574 Listanco.',
-        path: '/contacto',
+        path: '/contacto/',
         structuredData: BUSINESS_STRUCTURED_DATA,
       },
     },

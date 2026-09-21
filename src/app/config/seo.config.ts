@@ -49,9 +49,9 @@ export const BUSINESS_STRUCTURED_DATA: Record<string, unknown> = {
 
 export const IMPORT_SERVICE_STRUCTURED_DATA: Record<string, unknown> = {
   '@type': 'Service',
-  '@id': `${SITE_URL}/importacion-coches-alemania#service`,
+  '@id': `${SITE_URL}/importacion-coches-alemania/#service`,
   name: 'Importación de coches desde Alemania',
-  url: `${SITE_URL}/importacion-coches-alemania`,
+  url: `${SITE_URL}/importacion-coches-alemania/`,
   provider: {
     '@id': `${SITE_URL}/#business`,
   },
