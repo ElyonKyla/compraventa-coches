@@ -45,6 +45,31 @@
   force = true
 
 [[redirects]]
+  from = "/coches/BMW-318D-NEGRO-2013/"
+  to = "/coches/bmw-318d-negro-2013/"
+  status = 301
+
+[[redirects]]
+  from = "/coches/CITROEN-BERLINGO/"
+  to = "/coches/citroen-berlingo/"
+  status = 301
+
+[[redirects]]
+  from = "/coches/PEUGEOT-SCENIC/"
+  to = "/coches/renault-scenic/"
+  status = 301
+
+[[redirects]]
+  from = "/coches/VOLKSWAGEN%20GOLF%20VII%20GTD%20%E2%80%93%203%20PUERTAS-BLANCO/"
+  to = "/coches/volkswagen-golf-vii-gtd-3-puertas-blanco/"
+  status = 301
+
+[[redirects]]
+  from = "/coches/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404

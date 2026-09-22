@@ -10,6 +10,14 @@ const sitemapPath = join(outputPath, 'sitemap.xml');
 const robotsPath = join(outputPath, 'robots.txt');
 const staticPaths = ['/', '/taller/', '/stock/', '/importacion-coches-alemania/', '/contacto/'];
 
+function getRouteFile(pathname) {
+  const decodedPathname = pathname
+    .split('/')
+    .map((segment) => decodeURIComponent(segment))
+    .join('/');
+  return decodedPathname === '/' ? 'index.html' : join(decodedPathname.slice(1), 'index.html');
+}
+
 function validateStructuredData(data, url) {
   if (data['@context'] !== 'https://schema.org') {
     throw new Error(`Contexto Schema.org ausente o incorrecto en ${url}.`);
@@ -91,8 +99,7 @@ for (const url of urls) {
     throw new Error(`URL no canónica en sitemap: ${url}`);
   }
 
-  const routeFile =
-    parsedUrl.pathname === '/' ? 'index.html' : join(parsedUrl.pathname.slice(1), 'index.html');
+  const routeFile = getRouteFile(parsedUrl.pathname);
   const filePath = join(outputPath, routeFile);
   if (!existsSync(filePath)) {
     throw new Error(`Ruta del sitemap no prerenderizada: ${url}`);
@@ -164,7 +171,7 @@ for (const url of urls) {
     if (!href) {
       continue;
     }
-    const target = href === '/' ? 'index.html' : join(href.slice(1), 'index.html');
+    const target = getRouteFile(new URL(href, siteUrl).pathname);
     if (!existsSync(join(outputPath, target))) {
       throw new Error(`Enlace interno roto en ${url}: ${href}`);
     }

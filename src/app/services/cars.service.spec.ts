@@ -52,7 +52,7 @@ describe('CarsService', () => {
           id: 1,
           status: 'available',
           slug: 'volkswagen-golf-vi-match-2013',
-          Titulo: 'Volkswagen Golf VI Match',
+          Titulo: ' Volkswagen Golf VI Match ',
           Marca: 'Volkswagen',
           Modelo: 'Golf',
           Version: 'Match',
@@ -74,6 +74,7 @@ describe('CarsService', () => {
     const [car] = service.getPublicCars();
 
     expect(car.slug).toBe('volkswagen-golf-vi-match-2013');
+    expect(car.title).toBe('Volkswagen Golf VI Match');
     expect(car.images).toEqual([
       `${baseUrl}/assets/primary`,
       `${baseUrl}/assets/second`,

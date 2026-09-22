@@ -125,7 +125,7 @@ export class CarsService {
     return {
       id: String(car.id),
       slug: car.slug,
-      title: car.Titulo,
+      title: car.Titulo.trim(),
       brand: car.Marca,
       model: car.Modelo,
       version: car.Version ?? undefined,
