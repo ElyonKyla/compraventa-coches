@@ -63,7 +63,7 @@ export class Hero {
         return;
       }
 
-      const intervalId = window.setInterval(() => this.changeSlide(1, false), 6500);
+      const intervalId = window.setInterval(() => this.changeSlide(1, false), 5500);
       onCleanup(() => window.clearInterval(intervalId));
     });
   }

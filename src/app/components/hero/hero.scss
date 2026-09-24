@@ -263,28 +263,7 @@ h1 {
   }
 
   .carousel-controls {
-    flex-direction: column;
-    gap: 0;
-    inset: 50% 0.25rem auto auto;
-    transform: translateY(-50%);
-  }
-
-  .carousel-controls button {
-    background: transparent;
-    border: 0;
-    font-size: 0.85rem;
-    height: 2.75rem;
-    width: 2.75rem;
-  }
-
-  .carousel-controls button span {
-    background: rgba(15, 15, 16, 0.62);
-    border-radius: 50%;
-    padding: 0.55rem;
-  }
-
-  .carousel-controls button:hover {
-    background: transparent;
+    display: none;
   }
 
   .carousel-dots {
