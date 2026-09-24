@@ -55,14 +55,13 @@
 }
 
 .hero-shade {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7, 7, 8, 0.94) 0%,
-      rgba(12, 12, 13, 0.76) 43%,
-      rgba(12, 12, 13, 0.16) 78%
-    ),
-    linear-gradient(0deg, rgba(7, 7, 8, 0.62) 0%, transparent 42%);
+  background: linear-gradient(
+    90deg,
+    rgba(7, 7, 8, 0.88) 0%,
+    rgba(7, 7, 8, 0.58) 25%,
+    rgba(7, 7, 8, 0.12) 48%,
+    transparent 58%
+  );
   z-index: -1;
 }
 
@@ -260,9 +259,10 @@ h1 {
   .hero-shade {
     background: linear-gradient(
       0deg,
-      rgba(7, 7, 8, 0.98) 0%,
-      rgba(9, 9, 10, 0.74) 45%,
-      rgba(9, 9, 10, 0.08) 78%
+      rgba(7, 7, 8, 0.94) 0%,
+      rgba(7, 7, 8, 0.65) 35%,
+      rgba(7, 7, 8, 0.08) 65%,
+      transparent 78%
     );
   }
 
