@@ -1,16 +1,74 @@
 .hero {
-  background:
-    linear-gradient(90deg, rgba(12, 12, 13, 0.98) 0%, rgba(28, 28, 28, 0.84) 48%, rgba(104, 13, 15, 0.28) 100%),
-    url('/images/hero-showroom.svg') center/cover;
   border: 1px solid rgba(159, 18, 22, 0.28);
   box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.32);
   min-height: clamp(31rem, 46vw, 39rem);
   overflow: hidden;
   padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4.75rem);
+  position: relative;
+}
+
+.fallback {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 12, 13, 0.98) 0%,
+      rgba(28, 28, 28, 0.84) 48%,
+      rgba(104, 13, 15, 0.28) 100%
+    ),
+    url('/images/hero-showroom.svg') center/cover;
+}
+
+.carousel {
+  align-items: center;
+  display: flex;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+
+.carousel:focus-visible {
+  outline: 3px solid var(--color-red-accent);
+  outline-offset: 3px;
+}
+
+.hero-images,
+.hero-images img,
+.hero-shade {
+  inset: 0;
+  position: absolute;
+}
+
+.hero-images {
+  z-index: -2;
+}
+
+.hero-images img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  width: 100%;
+}
+
+.hero-images img.active {
+  opacity: 1;
+}
+
+.hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 7, 8, 0.94) 0%,
+      rgba(12, 12, 13, 0.76) 43%,
+      rgba(12, 12, 13, 0.16) 78%
+    ),
+    linear-gradient(0deg, rgba(7, 7, 8, 0.62) 0%, transparent 42%);
+  z-index: -1;
 }
 
 .hero-copy {
   max-width: 46rem;
+  position: relative;
 }
 
 .eyebrow {
@@ -30,6 +88,40 @@ h1 {
   max-width: 13ch;
 }
 
+.brand {
+  color: var(--color-red-accent);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+}
+
+.vehicle-data {
+  display: flex;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  margin: 1.75rem 0 2rem;
+}
+
+.vehicle-data div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.vehicle-data dt {
+  color: #b7b7b7;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.vehicle-data dd {
+  color: #fff;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  margin: 0;
+}
+
 .lead {
   color: #d7d7d7;
   font-size: clamp(1rem, 2vw, 1.18rem);
@@ -46,10 +138,18 @@ h1 {
 }
 
 .button {
+  display: inline-block;
   border-radius: 999px;
   font-weight: 700;
   padding: 0.9rem 1.25rem;
   text-decoration: none;
+}
+
+.button:focus-visible,
+.carousel-controls button:focus-visible,
+.carousel-dots button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }
 
 .primary {
@@ -71,14 +171,135 @@ h1 {
   color: var(--color-red-accent);
 }
 
+.carousel-controls {
+  bottom: 1.5rem;
+  display: flex;
+  gap: 0.6rem;
+  position: absolute;
+  right: 1.5rem;
+}
+
+.carousel-controls button {
+  align-items: center;
+  background: rgba(15, 15, 16, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.25rem;
+  height: 3rem;
+  justify-content: center;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+  width: 3rem;
+}
+
+.carousel-controls button:hover {
+  background: var(--color-red);
+  border-color: var(--color-red-accent);
+}
+
+.carousel-dots {
+  bottom: 0.1rem;
+  display: flex;
+  gap: 0.45rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.carousel-dots button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  height: 2.75rem;
+  justify-content: center;
+  padding: 0;
+  width: 2.75rem;
+}
+
+.carousel-dots button::before {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  content: '';
+  height: 0.35rem;
+  transition:
+    background-color 160ms ease,
+    width 160ms ease;
+  width: 1.4rem;
+}
+
+.carousel-dots button.active::before {
+  background: var(--color-red-accent);
+  width: 2rem;
+}
+
 @media (max-width: 620px) {
   .hero {
+    min-height: 34rem;
+    padding: 8rem 1.25rem 5.5rem;
+  }
+
+  .fallback {
     min-height: auto;
     padding-block: 3rem;
   }
 
-  .button {
+  .carousel {
+    align-items: flex-end;
+  }
+
+  .hero-images img {
+    object-position: center 35%;
+  }
+
+  .hero-shade {
+    background: linear-gradient(
+      0deg,
+      rgba(7, 7, 8, 0.98) 0%,
+      rgba(9, 9, 10, 0.74) 45%,
+      rgba(9, 9, 10, 0.08) 78%
+    );
+  }
+
+  .carousel .hero-copy {
+    max-width: 88%;
+  }
+
+  .carousel h1 {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .vehicle-data {
+    gap: 1.5rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+
+  .fallback .button {
     text-align: center;
     width: 100%;
+  }
+
+  .carousel-controls {
+    bottom: 1.25rem;
+    right: 1rem;
+  }
+
+  .carousel-dots {
+    bottom: 0;
+    left: 0.75rem;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-images img,
+  .carousel-controls button,
+  .carousel-dots button::before {
+    transition: none;
   }
 }

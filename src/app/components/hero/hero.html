@@ -1,14 +1,97 @@
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">Taller &amp; Cars Listanco</p>
-    <h1>Taller mecánico, motores y vehículos</h1>
-    <p class="lead">
-      Taller mecánico, reparación y rectificado de motores, compraventa de vehículos e importación
-      de coches desde Alemania.
-    </p>
-    <div class="actions">
-      <a class="button primary" routerLink="/stock/">Ver stock</a>
-      <a class="button secondary" href="tel:695577147">Llamar</a>
+@if (activeCar(); as car) {
+  <section
+    class="hero carousel"
+    role="region"
+    aria-label="Vehículos destacados"
+    aria-roledescription="carrusel"
+    aria-live="off"
+    tabindex="0"
+    (mouseenter)="setPointerInside(true)"
+    (mouseleave)="setPointerInside(false)"
+    (focusin)="setFocusInside(true)"
+    (focusout)="setFocusInside(false)"
+    (keydown)="handleKeydown($event)"
+    (touchstart)="handleTouchStart($event)"
+    (touchend)="handleTouchEnd($event)"
+  >
+    <div class="hero-images">
+      @for (featuredCar of cars(); track featuredCar.id; let first = $first; let index = $index) {
+        <img
+          [class.active]="index === activeIndex()"
+          [src]="featuredCar.images[0]"
+          [alt]="
+            index === activeIndex()
+              ? 'Fotografía de ' + featuredCar.brand + ' ' + featuredCar.model
+              : ''
+          "
+          [attr.aria-hidden]="index === activeIndex() ? null : 'true'"
+          [attr.fetchpriority]="first ? 'high' : 'low'"
+          [attr.loading]="first ? 'eager' : 'lazy'"
+        />
+      }
     </div>
-  </div>
-</section>
+    <div class="hero-shade"></div>
+
+    <div
+      class="hero-copy"
+      role="group"
+      aria-roledescription="diapositiva"
+      [attr.aria-label]="activeIndex() + 1 + ' de ' + cars().length"
+      aria-atomic="true"
+    >
+      <p class="brand">{{ car.brand }}</p>
+      <h1>{{ car.model }}</h1>
+      <dl class="vehicle-data">
+        <div>
+          <dt>Año</dt>
+          <dd>{{ car.year }}</dd>
+        </div>
+        <div>
+          <dt>Kilómetros</dt>
+          <dd>{{ car.mileage.toLocaleString('es-ES') }} km</dd>
+        </div>
+      </dl>
+      <a class="button primary" [routerLink]="'/coches/' + car.slug + '/'">Ver vehículo</a>
+    </div>
+
+    @if (hasMultipleCars()) {
+      <div class="carousel-controls">
+        <button type="button" aria-label="Vehículo anterior" (click)="showPrevious()">
+          <span aria-hidden="true">&#8592;</span>
+        </button>
+        <button type="button" aria-label="Vehículo siguiente" (click)="showNext()">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+      </div>
+
+      <div class="carousel-dots" role="group" aria-label="Seleccionar vehículo destacado">
+        @for (featuredCar of cars(); track featuredCar.id; let index = $index) {
+          <button
+            type="button"
+            [class.active]="index === activeIndex()"
+            [attr.aria-current]="index === activeIndex() ? 'true' : null"
+            [attr.aria-label]="
+              'Mostrar vehículo ' + (index + 1) + ': ' + featuredCar.brand + ' ' + featuredCar.model
+            "
+            (click)="showSlide(index)"
+          ></button>
+        }
+      </div>
+    }
+  </section>
+} @else {
+  <section class="hero fallback">
+    <div class="hero-copy">
+      <p class="eyebrow">Taller &amp; Cars Listanco</p>
+      <h1>Taller mecánico, motores y vehículos</h1>
+      <p class="lead">
+        Taller mecánico, reparación y rectificado de motores, compraventa de vehículos e importación
+        de coches desde Alemania.
+      </p>
+      <div class="actions">
+        <a class="button primary" routerLink="/stock/">Ver stock</a>
+        <a class="button secondary" href="tel:695577147">Llamar</a>
+      </div>
+    </div>
+  </section>
+}

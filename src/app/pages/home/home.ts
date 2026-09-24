@@ -15,4 +15,8 @@ import { CarsService } from '../../services/cars.service';
 export class Home {
   private readonly carsService = inject(CarsService);
   protected readonly featuredCars = computed(() => this.carsService.getFeaturedCars());
+  protected readonly otherCars = computed(() => {
+    const featuredIds = new Set(this.featuredCars().map((car) => car.id));
+    return this.carsService.getPublicCars().filter((car) => !featuredIds.has(car.id));
+  });
 }
